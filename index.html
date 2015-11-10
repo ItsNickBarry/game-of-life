@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/game-of-life.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
   </head>
@@ -19,20 +20,27 @@
     <div class="content">
       <div id="game-of-life-board"></div>
 
-      <div class="info">
-        <p>
-          "I'm still inclined to say occasionally that I hate it.  I hate the Game of Life."
-          John Conway
-        </p>
-        <p>
-          <a href="https://github.com/itsnickbarry/game-of-life">View on GitHub</a>
-        </p>
-      </div>
-      <div class="controls">
-        <div class="counter-container"><span id="game-of-life-counter">0</span></div>
-        <button id="game-of-life-toggle">Start</button>
-        <button id="game-of-life-reset">Reset</button>
-        <button id="game-of-life-tick">Tick</button>
+      <div class="right-pane">
+        <div class="info">
+          <div class="blockquote">
+            <p class="text">
+              "I'm still inclined to say occasionally that I hate it.  I hate the Game of Life."
+            </p>
+            <span class="attribution">
+              <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Conway</a>, on his legacy
+            </span>
+          </div>
+        </div>
+        <div class="controls">
+          <div id="game-of-life-counter">0</div>
+          <div class="button" id="game-of-life-toggle">Start</div>
+          <div class="button" id="game-of-life-reset">Reset</div>
+          <div class="button" id="game-of-life-tick">Tick</div>
+        </div>
+
+        <div class="github">
+          <a href="https://github.com/itsnickbarry/game-of-life">View on GitHub <i class="fa fa-github-square"></i></a>
+        </div>
       </div>
     </div>
 
