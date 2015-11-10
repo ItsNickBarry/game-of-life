@@ -7,18 +7,32 @@
     <meta name="author" content="Nick Barry">
 
     <link rel="stylesheet" type="text/css" href="css/game-of-life.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
   </head>
   <body>
-    <div class="info">
-      <p>
-        "I'm still inclined to say occasionally that I hate it.  I hate the Game of Life"
-        John Conway
-      </p>
-      <p>
-        <a href="https://github.com/itsnickbarry/game-of-life">View on GitHub</a>
-      </p>
+    <div class="title">
+      <span class="title-text">The Game of Life</span>
     </div>
-    <div id="game-of-life" class="board"></div>
+
+    <div class="content">
+      <div id="game-of-life-board"></div>
+
+      <div class="info">
+        <p>
+          "I'm still inclined to say occasionally that I hate it.  I hate the Game of Life."
+          John Conway
+        </p>
+        <p>
+          <a href="https://github.com/itsnickbarry/game-of-life">View on GitHub</a>
+        </p>
+      </div>
+      <div class="controls">
+        <div class="counter-container"><span id="game-of-life-counter">0</span></div>
+        <button id="game-of-life-toggle">Start</button>
+        <button id="game-of-life-reset">Reset</button>
+        <button id="game-of-life-tick">Tick</button>
+      </div>
+    </div>
 
     <script type="text/javascript" src="lib/Game.js"></script>
     <script type="text/javascript" src="lib/Board.js"></script>
@@ -26,8 +40,15 @@
 
     <script type="text/javascript">
       var initializeGameOfLife = function () {
-        var game = new window.GameOfLife.Game({ boardEl: document.getElementById('game-of-life') });
-        game.start();
+        window.GameOfLife.game = new window.GameOfLife.Game({
+          height: 30,
+          width: 30,
+          boardEl:    document.getElementById('game-of-life-board'),
+          counterEl:  document.getElementById('game-of-life-counter'),
+          resetEl:    document.getElementById('game-of-life-reset'),
+          tickEl:     document.getElementById('game-of-life-tick'),
+          toggleEl:   document.getElementById('game-of-life-toggle'),
+        });
       };
 
       if (document.readyState != 'loading'){

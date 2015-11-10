@@ -1,8 +1,11 @@
-.board {
+#game-of-life-board {
+  flex: none;
+  float: left;
+  display: block;
   background: #CECAC5;
 }
 
-.board:after{
+#game-of-life-board:after{
   content: '';
   display: block;
   clear: both;
@@ -41,4 +44,27 @@
 
 .cell.live:hover {
   background: #DD4814;
+}
+
+body {
+  font-family: Ubuntu;
+}
+.title {
+  text-align: center;
+  font-size: 12.5vw;
+}
+.content {
+  display: flex;
+}
+.info {
+  margin: 10px;
+}
+.controls button {
+  background: #5E2750;
+  color: white;
+  /*font-size: 1vw;*/
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+  text-align: center;
 }
