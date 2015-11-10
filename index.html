@@ -26,7 +26,8 @@
 
     <script type="text/javascript">
       var initializeGameOfLife = function () {
-        new window.GameOfLife.Game({ boardEl: document.getElementById('game-of-life') });
+        var game = new window.GameOfLife.Game({ boardEl: document.getElementById('game-of-life') });
+        game.start();
       };
 
       if (document.readyState != 'loading'){
