@@ -1,5 +1,5 @@
 # The Game of Life
-One of [John Conway's][conway] great contributions to the field of combinatorial game theory, and many regrets.
+One of [John Conway's][conway] great contributions to the field of combinatorial game theory, as well as one of his many regrets.
 
 This implementation is projected onto a toroidal surface.
 
