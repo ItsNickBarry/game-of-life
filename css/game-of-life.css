@@ -16,16 +16,16 @@
   width: 22px;
   /*border-radius: 20px;*/
   margin: 1px;
-  transition: background .5s,
+  /*transition: background .5s,
               box-shadow .5s,
-              transform .5s;
+              transform .5s;*/
 }
 
 .cell:hover {
   background: #772953;
-  transition: background 0s,
+  /*transition: background 0s,
               box-shadow .5s,
-              transform .5s;
+              transform .5s;*/
 }
 
 .cell.live {
