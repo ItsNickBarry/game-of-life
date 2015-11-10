@@ -1,72 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>The Game of Life</title>
-    <meta name="description" content="John Conway's Game of Life">
-    <meta name="author" content="Nick Barry">
+<head>
 
-    <link rel="stylesheet" type="text/css" href="css/game-of-life.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>The Game of Life</title>
+  <meta name="description" content="John Conway's Game of Life">
+  <meta name="author" content="Nick Barry">
 
-    <link rel="icon" type="image/png" href="images/favicon.png">
-  </head>
-  <body>
-    <div class="title">
-      <span class="title-text">The Game of Life</span>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="css/game-of-life0.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <span class="title-text">The Game of Life</span>
+      </div>
     </div>
-
-    <div class="content">
-      <div id="game-of-life-board"></div>
-
-      <div class="right-pane">
-        <div class="info">
-          <div class="blockquote">
-            <p class="text">
-              "I'm still inclined to say occasionally that I hate it.  I hate the Game of Life."
-            </p>
-            <span class="attribution">
-              <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Conway</a>, on his legacy
-            </span>
-          </div>
-        </div>
-        <div class="controls">
-          <div id="game-of-life-counter">0</div>
-          <div class="button" id="game-of-life-toggle">Start</div>
-          <div class="button" id="game-of-life-reset">Reset</div>
-          <div class="button" id="game-of-life-tick">Tick</div>
+    <div class="row">
+      <div class="content">
+        <div class="gol-board eight columns" id="game-of-life-board">
         </div>
 
-        <div class="github">
-          <a href="https://github.com/itsnickbarry/game-of-life">View on GitHub <i class="fa fa-github-square"></i></a>
+        <div class="four columns right-pane">
+            <div class="info">
+              <div class="blockquote">
+                <p class="text">
+                  "I'm still inclined to say occasionally that I hate it.  I hate the Game of Life."
+                </p>
+                <span class="attribution">
+                  <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Conway</a>, on his legacy
+                </span>
+              </div>
+            </div>
+            <div class="controls">
+              <div id="game-of-life-counter">0</div>
+              <div class="control-button" id="game-of-life-toggle">Start</div>
+              <div class="control-button" id="game-of-life-reset">Reset</div>
+              <div class="control-button" id="game-of-life-tick">Tick</div>
+            </div>
+            <div class="github">
+              <a href="https://github.com/itsnickbarry/game-of-life">View on GitHub <i class="fa fa-github-square"></i></a>
+            </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script type="text/javascript" src="lib/Game.js"></script>
-    <script type="text/javascript" src="lib/Board.js"></script>
-    <script type="text/javascript" src="lib/Cell.js"></script>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="lib/Game.js"></script>
+  <script type="text/javascript" src="lib/Board.js"></script>
+  <script type="text/javascript" src="lib/Cell.js"></script>
 
-    <script type="text/javascript">
-      var initializeGameOfLife = function () {
-        window.GameOfLife.game = new window.GameOfLife.Game({
-          height: 30,
-          width: 30,
-          startLiveChance: .3,
-          boardEl:    document.getElementById('game-of-life-board'),
-          counterEl:  document.getElementById('game-of-life-counter'),
-          resetEl:    document.getElementById('game-of-life-reset'),
-          tickEl:     document.getElementById('game-of-life-tick'),
-          toggleEl:   document.getElementById('game-of-life-toggle'),
-        });
-      };
+  <script type="text/javascript">
+    var initializeGameOfLife = function () {
+      window.GameOfLife.game = new window.GameOfLife.Game({
+        height: 30,
+        width: 30,
+        startLiveChance: .3,
+        boardEl:    document.getElementById('game-of-life-board'),
+        counterEl:  document.getElementById('game-of-life-counter'),
+        resetEl:    document.getElementById('game-of-life-reset'),
+        tickEl:     document.getElementById('game-of-life-tick'),
+        toggleEl:   document.getElementById('game-of-life-toggle'),
+      });
+    };
 
-      if (document.readyState != 'loading'){
-        initializeGameOfLife();
-      } else {
-        document.addEventListener('DOMContentLoaded', initializeGameOfLife);
-      }
-    </script>
-  </body>
+    if (document.readyState != 'loading'){
+      initializeGameOfLife();
+    } else {
+      document.addEventListener('DOMContentLoaded', initializeGameOfLife);
+    }
+  </script>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
 </html>

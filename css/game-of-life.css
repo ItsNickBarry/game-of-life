@@ -1,30 +1,18 @@
-#game-of-life-board {
-  flex: none;
-  display: block;
+.gol-board {
   background: #CECAC5;
 }
 
-#game-of-life-board:after{
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.cell {
-  float: left;
-  display: block;
+.gol-cell {
   background: #9F6986;
-  height: 22px;
-  width: 22px;
   /*border-radius: 20px;*/
   margin: 1px;
 }
 
-.cell:hover {
+.gol-cell:hover {
   background: #772953;
 }
 
-.cell.live {
+.gol-cell.live {
   background: #EA9172;
   transform: translate(4px, -4px);
   box-shadow: -1px 1px 0 #E77E5A,
@@ -33,7 +21,7 @@
               -4px 4px 0 #E77E5A;
 }
 
-.cell.live:hover {
+.gol-cell.live:hover {
   background: #DD4814;
 }
 
@@ -51,11 +39,8 @@ a:hover {
 
 .title {
   text-align: center;
-  font-size: 12.5vw;
-}
-
-.content {
-  display: flex;
+  font-size: 9.9vw;
+  white-space: nowrap;
 }
 
 .info {
@@ -63,26 +48,25 @@ a:hover {
   margin: 10px;
 }
 
-.right-pane {
-  margin: 10px;
-}
-
-.controls {
-  display: flex;
-}
 .controls div {
   background: #5E2750;
   color: white;
   line-height: 50px;
   text-align: center;
-  user-select: none;
-
   margin: 2px;
   display: block;
   height: 50px;
   width: 50%;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.controls .button {
+
+.controls .control-button {
   cursor: pointer;
 }
 
