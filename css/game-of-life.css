@@ -110,6 +110,10 @@ a:hover {
 
 #game-of-life-counter {
   background: #AE93A7;
+  font-weight: bold;
+}
+#game-of-life-counter.completed {
+  background: #EEA389;
 }
 
 #github-link-container {
@@ -131,6 +135,7 @@ a:hover {
   #right-pane-container:before {
     padding-top: 0;
   }
+
   #right-pane {
     position: relative;
   }
@@ -140,6 +145,9 @@ a:hover {
     position: relative;
   }
 
+  #control-panel {
+    height: 75%;
+  }
   .gol-control-element {
     height: calc(100% - 4px);
     width: calc(25% - 4px);

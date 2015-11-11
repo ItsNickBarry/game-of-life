@@ -11,5 +11,9 @@ Take a look at the [project site][gh-pages].
 # Acknowledgment
 The project site is made with [Skeleton][skeleton], which is released by David Gamache under the [MIT license][mit].
 
+It makes use of icons from [Font Awesome][fontawesome], which are released under the [SIL Open Font License][sil].
+
 [skeleton]: getskeleton.com
 [mit]: http://www.opensource.org/licenses/mit-license.php
+[fontawesome]: http://fontawesome.io/
+[sil]: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
