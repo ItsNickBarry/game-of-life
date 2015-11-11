@@ -33,39 +33,50 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div id="title">
+    <span class="title-text">The Game of Life</span>
+  </div>
   <div class="container">
     <div class="row">
-      <div class="title">
-        <span class="title-text">The Game of Life</span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="content">
-        <div class="gol-board eight columns" id="game-of-life-board">
-        </div>
 
-        <div class="four columns right-pane">
-            <div class="info">
-              <div class="blockquote">
-                <p class="text">
-                  "I'm still inclined to say occasionally that I hate it.  I hate the Game of Life."
-                </p>
-                <span class="attribution">
-                  <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Conway</a>, on his legacy
-                </span>
-              </div>
+      <div class="eight columns" id="game-of-life-board-container">
+        <div class="gol-board" id="game-of-life-board">
+          <!-- Game of Life Board -->
+        </div>
+      </div>
+
+      <div class="four columns" id="right-pane-container">
+        <div id="right-pane">
+
+          <div class="pane-element-container" id="control-panel-container">
+            <div class="pane-element" id="control-panel">
+              <div class="gol-control-element" id="game-of-life-counter">0</div>
+              <div class="gol-control-element gol-control-button" id="game-of-life-toggle">Start</div>
+              <div class="gol-control-element gol-control-button" id="game-of-life-reset">Reset</div>
+              <div class="gol-control-element gol-control-button" id="game-of-life-tick">Tick</div>
             </div>
-            <div class="controls">
-              <div id="game-of-life-counter">0</div>
-              <div class="control-button" id="game-of-life-toggle">Start</div>
-              <div class="control-button" id="game-of-life-reset">Reset</div>
-              <div class="control-button" id="game-of-life-tick">Tick</div>
+          </div>
+
+          <div class="pane-element-container" id="blockquote-container">
+            <div class="pane-element" id="blockquote">
+              <p class="text">
+                "I'm still inclined to say occasionally that I hate it.  I hate the Game of Life."
+              </p>
+              <span class="attribution">
+                <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Conway</a>, on his legacy
+              </span>
             </div>
-            <div class="github">
+          </div>
+
+          <div class="pane-element-container" id="github-link-container">
+            <div class="pane-element" id="github-link">
               <a href="https://github.com/itsnickbarry/game-of-life">View on GitHub <i class="fa fa-github-square"></i></a>
             </div>
+          </div>
+
         </div>
       </div>
+
     </div>
   </div>
 

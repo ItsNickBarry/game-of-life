@@ -1,5 +1,7 @@
 .gol-board {
   background: #CECAC5;
+  margin: 2px;
+  padding: 2px;
 }
 
 .gol-cell {
@@ -37,26 +39,61 @@ a:hover {
   text-decoration: underline;
 }
 
-.title {
+#title {
   text-align: center;
   font-size: 9.9vw;
-  white-space: nowrap;
 }
 
-.info {
+#right-pane-container {
+  position: relative;
+}
+
+#right-pane-container:before {
+  content: "";
   display: block;
-  margin: 10px;
+  padding-top: 213%;
 }
 
-.controls div {
-  background: #5E2750;
-  color: white;
-  line-height: 50px;
+#right-pane {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.pane-element-container {
+  height: 33%;
+}
+
+#blockquote {
   text-align: center;
+}
+
+#control-panel {
+  height: 50%;
+  background: #CECAC5;
+  padding: 1px;
   margin: 2px;
+}
+
+#control-panel:after {
+  content: "";
   display: block;
-  height: 50px;
-  width: 50%;
+  clear: both;
+}
+
+.gol-control-element {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  height: calc(50% - 4px);
+  width: calc(50% - 4px);
+  float: left;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -66,13 +103,45 @@ a:hover {
   user-select: none;
 }
 
-.controls .control-button {
+.gol-control-button {
   cursor: pointer;
+  background: #5E2750;
 }
 
-.github {
-  font-size: 3.6em;
+#game-of-life-counter {
+  background: #AE93A7;
 }
-.github a {
+
+#github-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+}
+
+#github-link {
+  font-size: 2.9vw;
+}
+
+#github-link a {
   color: black;
+}
+
+@media (max-width: 550px) {
+  #right-pane-container:before {
+    padding-top: 0;
+  }
+  #right-pane {
+    position: relative;
+  }
+
+  #github-link {
+    font-size: 10vw;
+    position: relative;
+  }
+
+  .gol-control-element {
+    height: calc(100% - 4px);
+    width: calc(25% - 4px);
+  }
 }
