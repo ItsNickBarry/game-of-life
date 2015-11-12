@@ -51,9 +51,9 @@
           <div class="pane-element-container" id="control-panel-container">
             <div class="pane-element" id="control-panel">
               <div class="gol-control-element" id="game-of-life-counter">0</div>
-              <div class="gol-control-element gol-control-button" id="game-of-life-toggle"><span><i class="fa fa-play"></span></i></div>
-              <div class="gol-control-element gol-control-button" id="game-of-life-reset"><span><i class="fa fa-refresh"></span></i></div>
-              <div class="gol-control-element gol-control-button" id="game-of-life-tick"><span><i class="fa fa-step-forward"></span></i></div>
+              <div class="gol-control-element gol-control-button" id="game-of-life-toggle"></div>
+              <div class="gol-control-element gol-control-button" id="game-of-life-reset"></div>
+              <div class="gol-control-element gol-control-button" id="game-of-life-tick"></div>
             </div>
           </div>
 
@@ -91,12 +91,12 @@
       window.GameOfLife.game = new window.GameOfLife.Game({
         height: 30,
         width: 30,
-        startLiveChance: .3,
-        boardEl:    document.getElementById('game-of-life-board'),
-        counterEl:  document.getElementById('game-of-life-counter'),
-        resetEl:    document.getElementById('game-of-life-reset'),
-        tickEl:     document.getElementById('game-of-life-tick'),
-        toggleEl:   document.getElementById('game-of-life-toggle'),
+        initialPopulationDensity: .3,
+        boardElement:    document.getElementById('game-of-life-board'),
+        counterElement:  document.getElementById('game-of-life-counter'),
+        resetElement:    document.getElementById('game-of-life-reset'),
+        tickElement:     document.getElementById('game-of-life-tick'),
+        toggleElement:   document.getElementById('game-of-life-toggle'),
       });
     };
 

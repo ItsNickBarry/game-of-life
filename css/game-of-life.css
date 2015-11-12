@@ -72,6 +72,8 @@ a:hover {
   text-align: center;
 }
 
+
+/* Control Panel */
 #control-panel {
   height: 50%;
   background: #CECAC5;
@@ -104,6 +106,7 @@ a:hover {
 }
 
 .gol-control-button {
+  font-family: FontAwesome;
   cursor: pointer;
   background: #5E2750;
 }
@@ -111,9 +114,27 @@ a:hover {
 #game-of-life-counter {
   background: #AE93A7;
   font-weight: bold;
+  font-size: 1.5em;
 }
+
 #game-of-life-counter.completed {
   background: #EEA389;
+}
+
+#game-of-life-reset:before {
+  content: "\f021";
+}
+
+#game-of-life-tick:before {
+  content: "\f051";
+}
+
+#game-of-life-toggle:before {
+  content: "\f04b";
+}
+
+#game-of-life-toggle.active:before {
+  content: "\f04c";
 }
 
 #github-link-container {
