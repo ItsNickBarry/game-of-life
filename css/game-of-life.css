@@ -1,6 +1,5 @@
 .gol-board {
   background: #CECAC5;
-  margin: 2px;
   padding: 2px;
 }
 
@@ -51,6 +50,7 @@ a:hover {
 #right-pane-container:before {
   content: "";
   display: block;
+  /*the ratio of Skeleton .eight.columns to .four.columns*/
   padding-top: 213%;
 }
 
@@ -64,22 +64,22 @@ a:hover {
   right: 0;
 }
 
-.pane-element-container {
-  height: 33%;
+.pane-element {
+  flex: auto;
+  padding: 1px;
 }
 
-#blockquote-container {
+#blockquote {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
 }
 
 #control-panel {
-  height: 50%;
   background: #CECAC5;
-  padding: 1px;
-  margin: 2px;
+  flex-grow: 0;
 }
 
 #control-panel:after {
@@ -116,6 +116,7 @@ a:hover {
   background: #AE93A7;
   font-weight: bold;
   font-size: 1.5em;
+  cursor: default;
 }
 
 #gol-counter.completed {
@@ -145,19 +146,20 @@ a:hover {
   content: "\f04c";
 }
 
-#github-link-container {
+#github-link {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
   text-align: center;
-}
-
-#github-link {
-  font-size: 2.9vw;
+  flex-grow: 0;
+  background: #CECAC5;
 }
 
 #github-link a {
-  color: black;
+  font-size: 2.6vw;
+  color: white;
+  background: #5E2750;
+  margin: 2px;
+  width: 100%;
 }
 
 @media (max-width: 550px) {
@@ -169,14 +171,14 @@ a:hover {
     position: relative;
   }
 
-  #github-link {
-    font-size: 10vw;
-    position: relative;
+  #github-link a {
+    font-size: 8vw;
   }
 
   #control-panel {
     height: 75%;
   }
+
   .gol-control-element {
     height: calc(100% - 4px);
     width: calc(25% - 4px);
