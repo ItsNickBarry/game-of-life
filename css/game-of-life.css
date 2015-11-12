@@ -68,12 +68,13 @@ a:hover {
   height: 33%;
 }
 
-#blockquote {
+#blockquote-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-
-/* Control Panel */
 #control-panel {
   height: 50%;
   background: #CECAC5;
