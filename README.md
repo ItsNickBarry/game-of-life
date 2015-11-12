@@ -1,11 +1,13 @@
 # The Game of Life
 One of [John Conway's][conway] great contributions to the field of combinatorial game theory, as well as one of his many regrets.
 
-This implementation is projected onto a toroidal surface.
+This implementation of the [Game of Life][gol] is projected onto a toroidal surface.
+
 
 Take a look at the [project site][gh-pages].
 
 [conway]: https://en.wikipedia.org/wiki/John_Horton_Conway
+[gol]: https://en.wikipedia.org/wiki/Conway's_Game_of_Life
 [gh-pages]: https://ItsNickBarry.github.io/game-of-life
 
 
