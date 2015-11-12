@@ -32,10 +32,12 @@ The constructor accepts an options hash, which may contain the following propert
 The number of rows on the board; default 30
 ###### width
 The number of columns on the board; default 30
-###### initialPopulationDensity
+###### defaultPopulationDensity
 The probability that each cell will be live when generated; default .3
 ###### boardElement
 The DOM element into which the board will be appended
+###### clearElement
+The DOM element which, when clicked, will clear the board
 ###### counterElement
 A DOM element which will be updated to display how many in-game generations have passed
 ###### resetElement

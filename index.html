@@ -39,8 +39,8 @@
   <div class="container">
     <div class="row">
 
-      <div class="eight columns" id="game-of-life-board-container">
-        <div class="gol-board" id="game-of-life-board">
+      <div class="eight columns" id="gol-board-container">
+        <div class="gol-board" id="gol-board">
           <!-- Game of Life Board -->
         </div>
       </div>
@@ -50,10 +50,11 @@
 
           <div class="pane-element-container" id="control-panel-container">
             <div class="pane-element" id="control-panel">
-              <div class="gol-control-element" id="game-of-life-counter">0</div>
-              <div class="gol-control-element gol-control-button" id="game-of-life-toggle"></div>
-              <div class="gol-control-element gol-control-button" id="game-of-life-reset"></div>
-              <div class="gol-control-element gol-control-button" id="game-of-life-tick"></div>
+              <div class="gol-control-element" id="gol-counter">0</div>
+              <div class="gol-control-element gol-control-button" id="gol-toggle"></div>
+              <div class="gol-control-element gol-control-button" id="gol-reset"></div>
+              <div class="gol-control-element gol-control-button" id="gol-tick"></div>
+              <!-- <div class="gol-control-element gol-control-button" id="gol-clear"></div> -->
             </div>
           </div>
 
@@ -70,7 +71,7 @@
 
           <div class="pane-element-container" id="github-link-container">
             <div class="pane-element" id="github-link">
-              <a href="https://github.com/itsnickbarry/game-of-life">View on GitHub <i class="fa fa-github-square"></i></a>
+              <a href="https://github.com/itsnickbarry/gol">View on GitHub <i class="fa fa-github-square"></i></a>
             </div>
           </div>
 
@@ -89,11 +90,26 @@
   <script type="text/javascript">
     var initializeGameOfLife = function () {
       window.GameOfLife.game = new window.GameOfLife.Game({
-        boardElement:    document.getElementById('game-of-life-board'),
-        counterElement:  document.getElementById('game-of-life-counter'),
-        resetElement:    document.getElementById('game-of-life-reset'),
-        tickElement:     document.getElementById('game-of-life-tick'),
-        toggleElement:   document.getElementById('game-of-life-toggle'),
+        boardElement:    document.getElementById('gol-board'),
+        // clearElement:    document.getElementById('gol-clear'),
+        counterElement:  document.getElementById('gol-counter'),
+        resetElement:    document.getElementById('gol-reset'),
+        tickElement:     document.getElementById('gol-tick'),
+        toggleElement:   document.getElementById('gol-toggle'),
+      });
+
+      var toggleElement = document.getElementById('gol-toggle');
+      var flashPlay = function () {
+        console.log('toggle');
+        toggleElement.classList.add('flash');
+        setTimeout(function () {
+          toggleElement.classList.remove('flash');
+        }, 500);
+      };
+
+      var interval = setInterval(flashPlay, 2000);
+      toggleElement.addEventListener('click', function () {
+        clearInterval(interval);
       });
     };
 

@@ -112,29 +112,36 @@ a:hover {
   background: #5E2750;
 }
 
-#game-of-life-counter {
+#gol-counter {
   background: #AE93A7;
   font-weight: bold;
   font-size: 1.5em;
 }
 
-#game-of-life-counter.completed {
+#gol-counter.completed {
   background: #EEA389;
 }
 
-#game-of-life-reset:before {
+#gol-toggle {
+  transition: background 1s;
+}
+#gol-toggle.flash {
+  background: #DD4814;
+}
+
+#gol-reset:before {
   content: "\f021";
 }
 
-#game-of-life-tick:before {
+#gol-tick:before {
   content: "\f051";
 }
 
-#game-of-life-toggle:before {
+#gol-toggle:before {
   content: "\f04b";
 }
 
-#game-of-life-toggle.active:before {
+#gol-toggle.active:before {
   content: "\f04c";
 }
 
